@@ -1,0 +1,26 @@
+package com.msa.service;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.msa.vo.PnShop;
+
+@Service
+public class GetPnshopListServiceImpl implements GetPnshopListService{
+	
+	@Override
+	public ArrayList<PnShop> getPnshopList() {
+		ArrayList<PnShop> pnshop_id_list = new ArrayList<>();
+		
+		for(int i=1; i<=3; i++) {
+			PnShop shop = new PnShop();
+			shop.setPnshopid(String.valueOf(i));
+			shop.setPnshopName(String.valueOf(i)+"기획전");
+			pnshop_id_list.add(shop);
+		}
+		
+		return pnshop_id_list;	
+	}
+
+}

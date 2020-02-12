@@ -1,0 +1,9 @@
+package come.msa.service;
+
+import java.util.ArrayList;
+
+import come.msa.vo.PnShop;
+
+public interface GetPnshopListService {
+	public ArrayList<PnShop> getPnshopList();
+}

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>기획전 선택하기</title>
+</head>
+<body>
+ 현재 진행중인 기획전 목록<br><br>
+ 
+<c:forEach items="${pnshop_list}" var="pnshop">
+	<a href='${contextPath}/show.jsp'> ${pnshop}</a><br>
+</c:forEach>
+ 
+</body>
+</html>
+

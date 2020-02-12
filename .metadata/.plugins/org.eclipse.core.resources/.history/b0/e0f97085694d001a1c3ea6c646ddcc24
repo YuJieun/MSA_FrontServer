@@ -1,0 +1,6 @@
+package com.msa.vo;
+
+public class Snippet {
+	The injection point has the following annotations:
+}
+

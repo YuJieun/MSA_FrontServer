@@ -1,3 +1,0 @@
-#Server
-Server.port=8090
-Serer.session.timeout=360000

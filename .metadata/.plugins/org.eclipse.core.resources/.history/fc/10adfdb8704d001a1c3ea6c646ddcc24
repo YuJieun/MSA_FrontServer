@@ -1,0 +1,24 @@
+package come.msa.vo;
+
+public class PnShop {
+	
+	private String pnshop_id;
+	private String pnshop_name;
+	
+	public String getid() {
+		return pnshop_id;
+	}
+	
+	public void setPnshopid(String pnshop_id) {
+		this.id = pnshop_id;
+	}
+	
+	public String getname() {
+		return name;
+	}
+	
+	public void setPnshopName(String pnshop_name) {
+		this.name = pnshop_name;
+	}
+
+}
