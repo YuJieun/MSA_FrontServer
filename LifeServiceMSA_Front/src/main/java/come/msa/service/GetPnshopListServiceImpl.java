@@ -2,7 +2,9 @@ package come.msa.service;
 
 import java.util.ArrayList;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import come.msa.vo.PnShop;
 
@@ -12,6 +14,17 @@ public class GetPnshopListServiceImpl implements GetPnshopListService{
 	@Override
 	public ArrayList<PnShop> getPnshopList() {
 		ArrayList<PnShop> pnshop_id_list = new ArrayList<>();
+		
+		RestTemplate restTemplate = new RestTemplate();
+		String url_str
+		  = "http://10.148.142.75:9999/getItems";
+		ResponseEntity<String> response
+		  = restTemplate.getForEntity(url_str, String.class);
+		String res_body = response.getBody();
+		
+		
+		
+		
 		
 		for(int i=1; i<=3; i++) {
 			PnShop shop = new PnShop();

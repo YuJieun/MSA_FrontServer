@@ -1,0 +1,5 @@
+package come.msa;
+
+public class RestfulConfig {
+
+}
