@@ -1,0 +1,37 @@
+package come.msa.service;
+
+import java.util.ArrayList;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import come.msa.vo.PnShop;
+
+@Service
+public class GetPnshopListServiceImpl implements GetPnshopListService{
+	
+	@Override
+	public ArrayList<PnShop> getPnshopList() {
+		ArrayList<PnShop> pnshop_id_list = new ArrayList<>();
+		
+		RestTemplate restTemplate = new RestTemplate();
+		String url_str = "http://127.0.0.1:8100/getpnshop";
+		ResponseEntity<String> response
+		  = restTemplate.getForEntity(url_str, String.class);
+		String res_body = response.getBody();
+		System.out.println(res_body);
+		
+		
+		
+		
+		for(int i=1; i<=3; i++) {
+			PnShop shop = new PnShop();
+			shop.setPnshopid(String.valueOf(i));
+			shop.setPnshopName(String.valueOf(i)+"기획전");
+			pnshop_id_list.add(shop);
+		}
+		return pnshop_id_list;	
+	}
+
+}

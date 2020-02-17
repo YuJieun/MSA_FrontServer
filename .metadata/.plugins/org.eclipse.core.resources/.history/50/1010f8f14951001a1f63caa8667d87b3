@@ -14,7 +14,7 @@
  
 <!--기획전 이름과 , 정보 등을 같이 보여주게끔 수정하면 좋을듯-->
 <c:forEach items="${pnshop_list}" var="pnshop">
-	<a href='${contextPath}/show'>${pnshop.pnshop_name}</a>&nbsp;&nbsp;${pnshop.pnshop_strt_dts} ~ ${pnshop.pnshop_end_dts}<br>
+	<a href='${contextPath}/show'>${pnshop.pnshop_name}</a><br>
 </c:forEach>
  
 </body>

@@ -39,7 +39,12 @@ public class GetPnshopListServiceImpl implements GetPnshopListService{
 			PnShop shop = new PnShop();
 			shop.setPnshopid(pnshop.get(i).get("pnshopid"));
 			shop.setPnshopName(pnshop.get(i).get("pnshopname"));	
-			shop.setPnshop_strt_dts(pnshop.get(i).get("pnshopstr"));
+//			shop.setPnshop_strt_dts(pnshop.get(i).get("pnshopstr"));
+			try {
+			Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(pnshop.get(i).get("pnshopstr"));  
+			shop.setPnshop_strt_dts(date1.toString());
+			}
+			catch (Exception e){}
 			shop.setPnshop_end_dts(pnshop.get(i).get("pnshopend"));
 			pnshop_id_list.add(shop);
 		}

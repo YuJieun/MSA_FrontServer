@@ -1,7 +1,5 @@
 package come.msa.service;
 
-import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -34,22 +32,13 @@ public class GetPnshopListServiceImpl implements GetPnshopListService{
 //		  = restTemplate.getForEntity(url_str, String.class);
 //				
 //		String res_body = response.getBody();
-		List<Map<String,String>> pnshop = response.getBody();
-		for(int i=0; i<pnshop.size(); i++) {
+		
+		for(int i=1; i<=3; i++) {
 			PnShop shop = new PnShop();
-			shop.setPnshopid(pnshop.get(i).get("pnshopid"));
-			shop.setPnshopName(pnshop.get(i).get("pnshopname"));	
-			shop.setPnshop_strt_dts(pnshop.get(i).get("pnshopstr"));
-			shop.setPnshop_end_dts(pnshop.get(i).get("pnshopend"));
+			shop.setPnshopid(String.valueOf(i));
+			shop.setPnshopName(String.valueOf(i)+"기획전");
 			pnshop_id_list.add(shop);
 		}
-
-//		for(int i=1; i<=3; i++) {
-//			PnShop shop = new PnShop();
-//			shop.setPnshopid(String.valueOf(i));
-//			shop.setPnshopName(String.valueOf(i)+"기획전");
-//			pnshop_id_list.add(shop);
-//		}
 		return pnshop_id_list;	
 	}
 
