@@ -11,47 +11,52 @@ import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
+import come.msa.service.GetItemListService;
 import come.msa.service.GetPnshopListService;
 
 @Controller
 public class CommonController {
 		
 	@Autowired
-	GetPnshopListService service;
+	GetPnshopListService pnshop_service;
+	GetItemListService item_service;
 	
 	@RequestMapping("/main")
     public ModelAndView choosePlanShop(){
 		ModelAndView main = new ModelAndView("main");
-		main.addObject("pnshop_list",service.getPnshopList());
+		main.addObject("pnshop_list",pnshop_service.getPnshopList());
         return main;
     }
 	
 	
 	@RequestMapping("/show")
-    public ModelAndView showPlanShop(){
-		ModelAndView mv = new ModelAndView("showPlanshop");
-        return mv;
+    public ModelAndView showPlanShop(@RequestParam("pnshopid") String pnshopid){
+		ModelAndView view = new ModelAndView("showPlanshop");
+		view.addObject("item_list",item_service.getItemList(pnshopid));
+        return view;
     }
 	
-	@ResponseBody
-	@RequestMapping("/show2")
-	public String test(){
-		RestTemplate restTemplate = new RestTemplate();
-		String url_str
-		  = "http://10.148.142.75:9999/getItems";
-//		ResponseEntity<String> response
-//		  = restTemplate.getForEntity(url_str, String.class);
-//		String ma = response.getBody();
-//		System.out.println(ma);
-		ResponseEntity<String> response = restTemplate.getForEntity(url_str, String.class);
-		
-		return response.toString();
-	}
+//	@ResponseBody
+//	@RequestMapping("/show2")
+//	public String test(){
+//		RestTemplate restTemplate = new RestTemplate();
+//		String url_str
+//		  = "http://10.148.142.75:9999/getItems";
+////		ResponseEntity<String> response
+////		  = restTemplate.getForEntity(url_str, String.class);
+////		String ma = response.getBody();
+////		System.out.println(ma);
+//		ResponseEntity<String> response = restTemplate.getForEntity(url_str, String.class);
+//		
+//		return response.toString();
+//	}
 
 }
  

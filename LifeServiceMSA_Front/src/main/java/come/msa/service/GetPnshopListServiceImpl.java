@@ -30,10 +30,6 @@ public class GetPnshopListServiceImpl implements GetPnshopListService{
 					
 				});
 		
-//		ResponseEntity<String> response
-//		  = restTemplate.getForEntity(url_str, String.class);
-//				
-//		String res_body = response.getBody();
 		List<Map<String,String>> pnshop = response.getBody();
 		for(int i=0; i<pnshop.size(); i++) {
 			PnShop shop = new PnShop();
@@ -44,12 +40,6 @@ public class GetPnshopListServiceImpl implements GetPnshopListService{
 			pnshop_id_list.add(shop);
 		}
 
-//		for(int i=1; i<=3; i++) {
-//			PnShop shop = new PnShop();
-//			shop.setPnshopid(String.valueOf(i));
-//			shop.setPnshopName(String.valueOf(i)+"기획전");
-//			pnshop_id_list.add(shop);
-//		}
 		return pnshop_id_list;	
 	}
 
