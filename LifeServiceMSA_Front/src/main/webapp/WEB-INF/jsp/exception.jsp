@@ -3,14 +3,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>    
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="EUC-KR">
-<title>에러발생!</title>
-</head>
-<body>
-예외페이지입니다.<br>
-<br>
-에러 메세지 : ${error_msg}<br>
-<a href='${contextPath}/main'>처음 페이지로 이동하기</a>
-</body>
+	<head>
+		<meta charset="EUC-KR">
+		<link rel="stylesheet" href="resources/css/Style.css">
+		<title>문제발생!</title>
+	</head>
+	<body>
+		<br><h2>문제가 발생했습니다</h2><br>
+		<span style="color:#cd3c3c">에러 메세지 : ${error_msg}</span><br>
+		<a href='${contextPath}/main'>메인 화면으로 이동하기</a>
+	</body>
 </html>
