@@ -5,7 +5,7 @@ import java.sql.Date;
 public class PnShop {
 	
 	private String pnshop_id;
-	private String pnshop_name;
+	private String pnshop_nm;
 	private String pnshop_strt_dts;
 	private String pnshop_end_dts;
 	
@@ -17,12 +17,12 @@ public class PnShop {
 		this.pnshop_id = pnshop_id;
 	}
 	
-	public String getpnshop_name() {
-		return pnshop_name;
+	public String getpnshop_nm() {
+		return pnshop_nm;
 	}
 	
-	public void setPnshopName(String pnshop_name) {
-		this.pnshop_name = pnshop_name;
+	public void setpnshop_nm(String pnshop_nm) {
+		this.pnshop_nm = pnshop_nm;
 	}
 
 	public String getPnshop_strt_dts() {
@@ -40,7 +40,5 @@ public class PnShop {
 	public void setPnshop_end_dts(String pnshop_end_dts) {
 		this.pnshop_end_dts = pnshop_end_dts;
 	}
-	
-	
 
 }

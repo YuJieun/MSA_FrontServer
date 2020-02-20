@@ -1,7 +1,0 @@
-package com.msa.service;
-
-@Service
-public class GetPnshopListService implements IGetPnshopListService{
-	
-
-}

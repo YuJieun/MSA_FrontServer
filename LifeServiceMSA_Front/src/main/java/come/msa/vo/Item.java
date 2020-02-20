@@ -1,34 +1,70 @@
 package come.msa.vo;
 
-public class Item {
-	private String item_id;
-	private String item_nm;
-	private int fst_sellprc;
-	private int disc_sellprc;
+import java.util.Date;
 
-	public String getItem_id() {
-		return item_id;
+public class Item {
+	private String itemId;
+	private String itemNM;
+	private Integer fstSellPrc;
+	private String regPeId;
+	private Date regDts;
+	private String modPeId;
+	private Date modDts;
+	private String promNM;
+	
+	public Item() {}
+	
+	public String getItemId() {
+		return itemId;
 	}
-	public void setItem_id(String item_id) {
-		this.item_id = item_id;
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
-	public String getItem_nm() {
-		return item_nm;
+	public String getItemNM() {
+		return itemNM;
 	}
-	public void setItem_nm(String item_nm) {
-		this.item_nm = item_nm;
+	public void setItemNM(String itemNM) {
+		this.itemNM = itemNM;
 	}
-	public int getFst_sellprc() {
-		return fst_sellprc;
+	public Integer getFstSellPrc() {
+		return fstSellPrc;
 	}
-	public void setFst_sellprc(int fst_sellprc) {
-		this.fst_sellprc = fst_sellprc;
+	public void setFstSellPrc(Integer fstSellPrc) {
+		this.fstSellPrc = fstSellPrc;
 	}
-	public int getDisc_sellprc() {
-		return disc_sellprc;
+	public String getRegPeId() {
+		return regPeId;
 	}
-	public void setDisc_sellprc(int disc_sellprc) {
-		this.disc_sellprc = disc_sellprc;
+	public void setRegPeId(String regPeId) {
+		this.regPeId = regPeId;
 	}
+	public String getModPeId() {
+		return modPeId;
+	}
+	public void setModPeId(String modPeId) {
+		this.modPeId = modPeId;
+	}
+	public Date getRegDts() {
+		return regDts;
+	}
+	public void setRegDts(Date regDts) {
+		this.regDts = regDts;
+	}
+	public Date getModDts() {
+		return modDts;
+	}
+	public void setModDts(Date modDts) {
+		this.modDts = modDts;
+	}
+
+	public String getPromNM() {
+		return promNM;
+	}
+
+	public void setPromNM(String promNM) {
+		this.promNM = promNM;
+	}
+	
+	
 
 }
